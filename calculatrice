@@ -1,0 +1,25 @@
+vente=1
+
+prix = float(input("indiquez le prix courant : "))
+quantity = float(input("combien de coin : "))
+total=prix*quantity
+print(total,"$")
+
+while vente != 0:
+    vente = float(input("prix de vente : "))
+
+    gain = vente * quantity - total
+    if gain > 0:
+        print("gain de:", gain,"$")
+            
+    elif vente == 0:
+        print("done")
+        vente = 0
+                
+    elif gain < 0:
+        print("vente pour", total,"$")
+        quantity = total/vente
+        print("nouveau solde de coin :", quantity)
+    
+    elif gain == 0:
+        print("gain nul")
